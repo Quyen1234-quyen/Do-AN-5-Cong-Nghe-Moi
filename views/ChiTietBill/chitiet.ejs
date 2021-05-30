@@ -1,0 +1,83 @@
+<html>
+
+<body>
+
+    <form action="/bill" method="GET" class=" form-horizontal">
+        <h1 class="text-center">Thông Tin Đơn Hàng</h1>
+        <hr/>
+        
+        <%data.Items.forEach(item=>{ %>
+            <div class="form-group">
+                    <label class="control-label col-sm-4" for="email">Tên Khách Hàng :</label>
+                    <div class="col-sm-4">
+                        <input readonly="true" class="form-control" readonly="true" name="Idprod" value="<%=item.tenkh%>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="email"> Số Điện Thoại :</label>
+                    <div class="col-sm-4">
+                        <input readonly="true" class="form-control" readonly="true" name="Idprod" value="<%=item.sodienthoai%>">
+                    </div>
+                </div>
+                <div class="form-group">
+                        <label class="control-label col-sm-4" for="email">Địa Chỉ :</label>
+                        <div class="col-sm-4">
+                            <input readonly="true" class="form-control" readonly="true" name="Idprod" value="<%=item.diachi%>">
+                        </div>
+                    </div>
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="email">Mã Sản Phẩm :</label>
+                <div class="col-sm-4">
+                    <input readonly="true" class="form-control" readonly="true" name="Idprod" value="<%=item.Idprod%>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="email">Tên Sản Phẩm :</label>
+                <div class="col-sm-4">
+                    <input readonly="true" class="form-control" readonly="true" name="ten" value="<%=item.ten%>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="email">Gía Sản Phẩm :</label>
+                <div class="col-sm-4">
+                    <input readonly="true" class="form-control" readonly="true" name="gia" value="<%=item.gia%>$">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="email">Số Lượng :</label>
+                <div class="col-sm-4">
+                    <input readonly="true" class="form-control" readonly="true" name="quantity" value="<%=item.quantity%>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="email">Hình Ảnh :</label>
+                <div class="col-sm-8">
+                    <img src="<%=item.hinhanh%>" width="180dp" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="email">Thành Tiền :</label>
+                <div class="col-sm-4">
+                    <input readonly="true" class="form-control" readonly="true" name="Idprod" value="<%=item.tien%>$">
+                </div>
+            </div>
+            <hr/>
+            <%})%>
+
+                <div class="text-center">
+                    <% tongtien=0%>
+                        <%data.Items.forEach(item1=>{%>
+                            <%tongtien+=item1.tien%>
+                                <%})%>
+                                    <h3>Tổng Tiền Đơn Hàng</h3>
+                                    <p style="color:red;font-size:30px">
+                                        <%=tongtien%>$</p>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn text-center" style="margin-bottom: 10px">Quay Lại</button>
+                </div>
+    </form>
+
+</body>
+
+</html>

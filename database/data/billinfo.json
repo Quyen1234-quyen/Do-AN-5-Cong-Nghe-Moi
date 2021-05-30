@@ -1,0 +1,12 @@
+[
+    {
+        "idBill":"B1",
+        "idprod":"P1",
+        "quantity":"1"  
+    },
+    {
+        "idBill":"B1",
+        "idprod":"P2",
+        "quantity":"2"  
+    }
+]

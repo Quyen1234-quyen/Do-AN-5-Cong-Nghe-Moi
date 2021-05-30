@@ -1,0 +1,104 @@
+@font-face{
+	font-family:header;
+	src:url(../fonts/Merriweather-Bold.ttf) format('truetype');
+	font-size:normal;	
+	font-weight:normal;
+}
+
+.giohang{
+    font-family: header;
+    margin:10px;
+    background: #ddd;
+    padding: 30px;
+    border-radius: 6px;
+}
+.giohang1 div span{
+    font-size: 20px;
+
+}
+.giohang2 p{
+    font-size: 20px;
+}
+.giohang5 .qty{
+    font-size: 20px;
+    margin:0px 8px;
+    
+}
+.giohang4 p{
+    font-size: 20px;
+}
+.giohang6 p{
+    font-size: 20px;
+}
+.giohang .tongtien{
+    font-size: 20px;
+}
+.giohang #tongtien{
+    margin-top:20px;
+}
+#giohang >div p{
+    font-size: 12px;
+}
+#giohang #close{
+    color:white;
+    background: black;
+}
+#giohang a{
+    background: transparent;
+    color:black;
+    
+}
+#giohang a:hover{
+    border:none;
+}
+#giohang #sl{
+    padding:0px;
+}
+#giohang #sl a{
+    padding: 0px;
+}
+/*xac nhan*/
+.xacnhan{
+    margin-top: 20px;
+}
+.xacnhan  a{
+    padding:10px;
+    background: rgb(27, 177, 40) ;
+    color: white;
+    -webkit-transition: all .5s ease-in-out;  
+	-moz-transition: all .5s ease-in-out;  
+	transition: all .5s ease-in-out;
+}
+.xacnhan a:hover{
+    background: white;
+    color: rgb(27, 177, 40) ;
+   
+}
+#huybo{
+    background: rgb(27, 177, 40) ;
+    padding:6px;
+}
+@media (min-width:10px ) and (max-width: 767px) { 
+    .giohang2 img{
+        width: 50%;
+        margin:10px 0px;    
+    }
+    .giohang .tieude{
+        display: none;
+    }
+    .giohang .tongtien{
+        font-size: 20px;
+    }
+    .xacnhan  div{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    #giohang #tieude{
+        display: none;
+    }
+    #giohang img{
+        width: 50%;
+        left: -10;
+    }
+
+}

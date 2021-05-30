@@ -1,0 +1,17 @@
+<html>
+
+<body>
+    <h4 class="text-center">Bạn Có Thật Sự Muốn Xóa Không</h4>
+    <hr/>
+    <div class="text-center">
+        <a href="/bill" class="btn btn-default text-center" style="margin-bottom: 10px">Quay Lại</a>
+        <%data.Items.forEach(item=>{%>
+            <a href="/xoaluon/<%=item.IdBill%>/<%=item.IdUser%>">
+                <button class="btn btn-warning" style="margin-bottom: 10px">Xóa</button>
+            </a>
+        <%})%>
+    </div>
+
+</body>
+
+</html>

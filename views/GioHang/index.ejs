@@ -1,0 +1,165 @@
+<% include ../Header/header.ejs%>
+    <!--category-->
+    
+    
+    <div class="content">
+
+        <%dem=0%>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="row xemthem">
+                    <!--tieu de-->
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                        <span id="xem">GIỎ HÀNG CỦA BẠN</span>
+                    </div>
+                    <!--tieu de-->
+                </div>
+            </div>
+        </div>
+        <!--giohang-->
+        <div class="giohang">
+
+            <div class="row tieude" style="border-bottom: 1px solid #000">
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <p class="text-center">Hành Động</p>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <p class="text-center">Hình Ảnh</p>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <p class="text-center">Tên</p>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <p class="text-center">Gía</p>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <p class="text-center">Số Lượng</p>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <p class="text-center">Thành Tiền</p>
+                </div>
+
+            </div>
+
+            <div>
+                <% giohang.forEach(item=>{%>
+                    <%dem++%>
+                    <div class="row" style="border-bottom:1px solid #000;padding: 20px 0px">
+                        <!--xoa-->
+                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 giohang1">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right">
+                                    <a href='' data-toggle="modal" data-target="#myModal">
+                                        <span class="fa fa-close"></span>
+                                    </a>
+                                    <%include ./../xoaspgiohang.ejs%>
+
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left">
+                                    <span class="fa fa-heart"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--xoa-->
+                        <!--hinh anh-->
+                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 giohang2">
+
+                            <div class="img text-center">
+                                <img src="<%= item.img%>" width="100%">
+                            </div>
+
+                        </div>
+                        <!--hinh anh-->
+                        <!--tieude-->
+                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 giohang3 text-center">
+
+                            <div>
+                                <p>
+                                    <%= item.tensp%>
+                                </p>
+                            </div>
+
+                        </div>
+                        <!--tieude-->
+                        <!--price-->
+                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 giohang4">
+                            <p class="text-center">
+                                <%= item.giasp%>
+                            </p>
+                        </div>
+                        <!--price-->
+                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 giohang5 text-center">
+                            <div>
+                                &nbsp;
+                                <a href="/GiamSoLuong/<%=item.id%>" class="fa fa-minus">
+                                </a>
+                                &nbsp;
+                                <span class="qty">
+                                    <%=item.soluong%>
+                                </span>
+                                &nbsp;
+                                <a href="/ThemSoLuong/<%=item.id%>" class="fa fa-plus">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 giohang6 text-center">
+                            <p>
+                                <%=item.tien %>
+                            </p>
+                        </div>
+                    </div>
+                    <%})%>
+
+            </div>
+            <div class="row" id="tongtien" style="border-bottom: 1px solid #000">
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <p class="text-center"></p>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <p class="text-center"></p>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <p class="text-center"></p>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <p class="text-center"></p>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <p class="text-center">Tổng Tiền</p>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 tongtien">
+                    <p class="text-center">
+                        <span>
+                            <%=tongtien%>$</span>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="row xacnhan">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-left">
+                    <a href="/" class="btn" >
+                        Tiếp Tục Mua Hàng
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6  text-right">
+                   
+                    <a <%=dem>0? 'href=a data-toggle=modal data-target=#modalXacNhan' :'onclick=loi()'%>  class="btn">
+                        Xác Nhận Mua Hàng
+                    </a>
+                    <%include ../xacnhan.ejs%>
+                </div>
+                <script>
+                    function loi(){
+                        alert('Bạn Chưa Thêm Sản Phẩm Vào Giỏ Hàng');
+                    }
+                </script>
+            </div>
+
+        </div>
+
+
+    </div>
+    <!--footer-->
+    <%include ../Footer/footer.ejs%>

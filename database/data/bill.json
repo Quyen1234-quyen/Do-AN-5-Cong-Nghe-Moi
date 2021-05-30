@@ -1,0 +1,22 @@
+[
+    {
+        "idBill":"B1",
+        "idUser":"Quyen",
+        "email":"lvq@gmail.com",
+        "address":"Quang Ngai",
+        "phoneNumber":"0971370494",
+        "dateBuy":"09/09/2018",
+        "trangthai":"0",
+        "tinhtrang":"0"
+    },
+    {
+        "idBill":"B2",
+        "idUser":"Quyen",
+        "email":"lvq@gmail.com",
+        "address":"Quang Ngai",
+        "phoneNumber":"0971370494",
+        "dateBuy":"09/09/2018",
+        "trangthai":"1",
+        "tinhtrang":"0"
+    }
+]

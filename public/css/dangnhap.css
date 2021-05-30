@@ -1,0 +1,20 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+@font-face{
+	font-family:header;
+	src:url(../fonts/Merriweather-Bold.ttf) format('truetype');
+	font-size:normal;	
+	font-weight:normal;
+}
+#form{
+    border-radius: 10px;
+    width: 300px;
+    margin: auto;
+    border:1px solid #ddd;
+    margin-top:150px;
+}
+#form h1{
+    font-family: header;
+}

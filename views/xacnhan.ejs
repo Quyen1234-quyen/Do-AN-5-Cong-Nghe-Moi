@@ -1,0 +1,137 @@
+<div class="modal fade" id="modalXacNhan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Xác Nhận Mua Hàng</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body ">
+                    <form role="form" action="/xacnhan" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nhap Tên" name="iten" value="" required />
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Nhap Email" name="iemail" value="" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nhap Số Điện Thoại" name="isdt" value="" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nhap Địa Chỉ" name="idc" value="" required />
+                        </div>
+
+                        <div class="text-center" style="color:red">
+                            <p>(*) Kiểm Tra Kỹ Thông Tin Trước Khi Xác Nhận Mua Hàng</p>
+                            <p>(*) Sau khi xác nhận bạn nhớ kiểm tra mail</p>
+                            <p>(*) Xác nhận mail thông qua dịch vụ AWS của FastFood</p>
+                        </div>
+                        <div id="giohang">
+                            <div style="margin-top:10px">
+                                <div class="row" style="border-bottom: 1px solid #000" id="tieude">
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <p class="text-center">Hành Động</p>
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <p class="text-center">Hình Ảnh</p>
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <p class="text-center">Tên</p>
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <p class="text-center">Gía</p>
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <p class="text-center">Số Lượng</p>
+                                    </div>
+                                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                        <p class="text-center">Thành Tiền</p>
+                                    </div>
+
+                                </div>
+                                <% giohang.forEach(item=>{%>
+                                    <div class="row" style="border-bottom:1px solid #000;padding: 20px 0px">
+                                        <!--xoa-->
+                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 ">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right">
+                                                    <a href='/xoaSPgh/<%=item.id%>'>
+                                                        <span class="fa fa-close"></span>
+                                                    </a>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <!--xoa-->
+                                        <!--hinh anh-->
+                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 ">
+
+                                            <div class="img text-center">
+                                                <img src="<%= item.img%>" width="100%">
+                                            </div>
+
+                                        </div>
+                                        <!--hinh anh-->
+                                        <!--tieude-->
+                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2  text-center">
+
+                                            <div>
+                                                <p>
+                                                    <%= item.tensp%>
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                        <!--tieude-->
+                                        <!--price-->
+                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 ">
+                                            <p class="text-center">
+                                                <%= item.giasp%>
+                                            </p>
+                                        </div>
+                                        <!--price-->
+                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2  text-center">
+                                            <div id="sl">
+                                                &nbsp;
+                                                <a href="/GiamSoLuong/<%=item.id%>" class="fa fa-minus">
+                                                </a>
+                                                &nbsp;
+                                                <span class="qty">
+                                                    <%=item.soluong%>
+                                                </span>
+                                                &nbsp;
+                                                <a href="/ThemSoLuong/<%=item.id%>" class="fa fa-plus">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2  text-center">
+                                            <p>
+                                                <%=item.tien %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <%})%>
+                            </div>
+                        </div>
+                        <div class="text-center" style="margin-top:20px">
+                            <button  class="btn " style="background:rgb(27, 177, 40);color:white">XÁC NHẬN</button>
+                            <a href="/giohang" class="btn " id="huybo">HỦY BỎ</a>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center text-center">
+                            <div class="text-center" style="color:red">
+
+                                <p>(*) Kiểm Tra Kỹ Thông Tin Trước Khi Xác Nhận Mua Hàng</p>
+                                <p>(*) Sau khi xác nhận bạn nhớ kiểm tra mail</p>
+                                <p>(*) Xác nhận mail thông qua dịch vụ AWS của FastFood</p>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
