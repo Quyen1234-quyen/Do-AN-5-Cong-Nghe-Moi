@@ -3,8 +3,8 @@ AWS.config.update({
     region: "us-west-2"
 });
 
-AWS.config.accessKeyId = "AKIAID7V3NGIR6Z7A6FQ";
-AWS.config.secretAccessKey = "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";
+AWS.config.accessKeyId = "";
+AWS.config.secretAccessKey = "";
 
 var docClient = new AWS.DynamoDB.DocumentClient();
 exports.login = function (user, pass, callback) {
