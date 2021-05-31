@@ -14,8 +14,8 @@ AWS.config.update({
     region: "us-west-2",
     endpoint: "http://s3-us-west-2.amazonaws.com"
 });
-AWS.config.accessKeyId = "AKIAID7V3NGIR6Z7A6FQ";
-AWS.config.secretAccessKey = "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";
+AWS.config.accessKeyId = "";
+AWS.config.secretAccessKey = "";
 var s3 = new AWS.S3({ params: { Bucket: 'vanquyen' } });
 var sess;
 
